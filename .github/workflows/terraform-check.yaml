@@ -21,4 +21,26 @@ jobs:
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
 
+    - name: Terraform Format
+      run: terraform fmt -check
 
+
+  Terraform lint:
+  #Helps you to lint your code 
+    steps:
+      - name: setup-linter
+        uses: terraform-linters/setup-tflint@v3
+        with:
+          tflint_version: latest
+      
+      
+      - name: Show version
+        run: tflint --version
+
+
+      - name: Init TFLint
+        run: tflint --init
+
+
+      - name: Run TFLint
+        run: tflint -f compact
