@@ -20,9 +20,6 @@ jobs:
     #install terraform
     - name: Set up Terraform
       uses: hashicorp/setup-terraform@v1
-
-    - name: Terraform Format
-      run: terraform fmt -check
     
     - name: Terrform-init
       run: terraform init
@@ -32,6 +29,9 @@ jobs:
 
     - name: Terraform-apply
       run: terraform apply --auto-approve
+
+    - name: Terraform Format
+      run: terraform fmt -check
       
 
 
