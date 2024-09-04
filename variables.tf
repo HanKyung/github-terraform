@@ -1,6 +1,6 @@
-variable user_name{
+variable user_name {
 
-    type=string
-    default="stephen"
+    type= string
+    default= "stephen"
     description = "type of sns topic"
 }
