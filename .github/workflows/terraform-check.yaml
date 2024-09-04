@@ -23,24 +23,34 @@ jobs:
 
     - name: Terraform Format
       run: terraform fmt -check
+    
+    - name: Terrform-init
+      run: terraform init
+
+    - name: Terraform-plan
+      run: terraform plan 
+
+    - name: Terraform-apply
+      run: terraform apply --auto-approve
+      
 
 
-  Terraform lint:
-  #Helps you to lint your code 
-    steps:
-      - name: setup-linter
-        uses: terraform-linters/setup-tflint@v3
-        with:
-          tflint_version: latest
+  # Terraform lint:
+  # #Helps you to lint your code 
+  #   steps:
+  #     - name: setup-linter
+  #       uses: terraform-linters/setup-tflint@v3
+  #       with:
+  #         tflint_version: latest
       
       
-      - name: Show version
-        run: tflint --version
+  #     - name: Show version
+  #       run: tflint --version
 
 
-      - name: Init TFLint
-        run: tflint --init
+  #     - name: Init TFLint
+  #       run: tflint --init
 
 
-      - name: Run TFLint
-        run: tflint -f compact
+  #     - name: Run TFLint
+  #       run: tflint -f compact
